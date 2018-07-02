@@ -34,8 +34,6 @@ export function signIn(fields, success) {
                payload: response.data
            })
            success();
-            //store token in local storage
-            //dispatch AUTHENTICATE_USER to store user and set authenticated to true
 
         })
         .catch(err => {

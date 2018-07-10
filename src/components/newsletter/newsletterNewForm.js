@@ -50,7 +50,7 @@ class NewNewsletterForm extends Component {
                     component={FormButton}
                     onClick={this.props.onCancel}
                  />
-                                 <Field
+                <Field
                     className='new-newsletter-form__image'
                     small={true}
                     name='image'

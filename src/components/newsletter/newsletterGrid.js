@@ -15,7 +15,9 @@ class NewsletterGrid extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchNewsletters();
+        setTimeout(() => {
+            this.props.fetchNewsletters();
+          }, 1000);
     }
     render() {
 
@@ -30,7 +32,7 @@ class NewsletterGrid extends Component {
         return (
             <div className='newsletter-grid'>
                 <Button className="newsletter-grid__button" icon='fas fa-plus' callback={() => this.handleAddNewsletter()}/>
-                <NewsletterBox date={new Date()}/>
+                <NewsletterBox />
                 <NewsletterArchive/>
                 <NewsletterLatest history={this.props.history} {...latest}/>
             </div>

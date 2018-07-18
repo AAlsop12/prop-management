@@ -1,12 +1,11 @@
-import { 
-    SET_NEWSLETTERS, 
+import {
+    SET_NEWSLETTERS,
     FETCH_NEWSLETTER_ID
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    newsletters : [],
+    newsletters: [],
     newsletterToEdit: {}
-
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -16,7 +15,6 @@ export default function(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 newsletters
-                
             }
         case FETCH_NEWSLETTER_ID:
             const newsletterID = action.payload;
@@ -30,7 +28,6 @@ export default function(state = INITIAL_STATE, action) {
                 ...state,
                 newsletterToEdit
             }
-
         default: return state;
     }
 }

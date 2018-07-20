@@ -6,15 +6,20 @@ import * as actions from '../../actions';
 import NewNewsletterForm from "../newsletter/newsletterNewForm";
 
 class NewRequest extends Component {
-  onSubmit = fields => {
-    // if(button == 'submit') {
-    //   // save new newsletter on the backend. perform a post request here.
-    //   console.log('trying to submit to backend.');
-    // }
-    this.props.createNewRequest(this.props._id, fields, () => {
-      this.props.history.push("/dashboard");
-    })
 
+  onSubmit = fields => {
+
+    const { title, body, image } = fields;
+
+    var formData = new FormData();
+    formData.append('title', title);
+    formData.append('body', body);
+    formData.append('image', image);
+
+    this.props.createNewRequest(this.props._id, fields, () => {
+        this.props.history.push("/dashboard");
+    })
+    
   };
 
   onCancel = () => {
@@ -39,8 +44,8 @@ class NewRequest extends Component {
 }
 
 function mapStateToProps(state) {
-  const { _id } = state.auth.user;
-  return { _id }
+    const { _id } = state.auth.user;
+    return { _id }
 }
 
 NewRequest = connect(mapStateToProps, actions)(NewRequest);

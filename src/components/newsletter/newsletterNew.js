@@ -3,7 +3,7 @@ import NewNewsletterForm from './newsletterNewForm';
 
 class NewNewsletter extends Component {
 
-    onSubmit = (fields) => {
+    onSubmit = fields => {
         //     console.log(button)  
         //     if(button == 'submit') {
         //         console.log('trying to submit to backend.')
